@@ -1,2 +1,2 @@
-# golang-mta
+# mta-hosting-optimizer
 mta-hosting-optimizer
