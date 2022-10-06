@@ -22,7 +22,7 @@ const dbName = "mta-optimizer"
 const colName = "mta"
 const X = 1
 
-func getMongoConnection() *mongo.Collection {
+func (m *MtaData) getMongoConnection() *mongo.Collection {
 	clientOption := options.Client().ApplyURI(connectionString)
 
 	client, err := mongo.Connect(context.TODO(), clientOption)
@@ -37,7 +37,7 @@ func getMongoConnection() *mongo.Collection {
 }
 
 func (m *MtaData) GetAllmtas() []string {
-	mtaCollection := getMongoConnection()
+	mtaCollection := m.getMongoConnection()
 	var resmaptrue = map[string]int{}
 	var resmapfalse = map[string]int{}
 	// val := os.Getenv("X")
